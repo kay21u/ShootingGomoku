@@ -20,7 +20,7 @@ public class PointerController : MonoBehaviour
         // カーソル位置を取得
         Vector3 mousePos = Input.mousePosition;
         // カーソル位置をワールド座標に変換
-        Vector3 target = Camera.main.ScreenToWorldPoint(new Vector3(mousePos.x, mousePos.y, 10f));
+        Vector3 target = Camera.main.ScreenToWorldPoint(new Vector3(mousePos.x, mousePos.y, 6f));
         // GameObjectのtransform.positionにカーソル位置(ワールド座標)を代入
         transform.position = target;
 

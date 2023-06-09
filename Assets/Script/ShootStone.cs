@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PuttingStone : MonoBehaviour
+public class ShootStone : MonoBehaviour
 {
     public GameObject WhiteStone;
     public GameObject BlackStone;
@@ -51,8 +51,7 @@ public class PuttingStone : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Select();
-        if (Input.GetKeyDown(KeyCode.Return))
+        if (Input.GetMouseButtonDown(0))
         {
             // get current stone pos and check
             Vector3 CrrStonePos = CurrentStone.transform.position;
@@ -121,31 +120,6 @@ public class PuttingStone : MonoBehaviour
                     }
                 }
             }
-        }
-    }
-
-    void Select()
-    {
-        Vector3 StonePos = CurrentStone.transform.position;
-        if (Input.GetKeyDown(KeyCode.UpArrow))
-        {
-            CurrentStone.transform.position = new Vector3(StonePos.x, StonePos.y, StonePos.z + 1);
-            ParticleSystem.transform.position = new Vector3(StonePos.x, StonePos.y, StonePos.z + 1);
-        }
-        if (Input.GetKeyDown(KeyCode.DownArrow))
-        {
-            CurrentStone.transform.position = new Vector3(StonePos.x, StonePos.y, StonePos.z - 1);
-            ParticleSystem.transform.position = new Vector3(StonePos.x, StonePos.y, StonePos.z - 1);
-        }
-        if (Input.GetKeyDown(KeyCode.LeftArrow))
-        {
-            CurrentStone.transform.position = new Vector3(StonePos.x - 1, StonePos.y, StonePos.z);
-            ParticleSystem.transform.position = new Vector3(StonePos.x - 1, StonePos.y, StonePos.z);
-        }
-        if (Input.GetKeyDown(KeyCode.RightArrow))
-        {
-            CurrentStone.transform.position = new Vector3(StonePos.x + 1, StonePos.y, StonePos.z);
-            ParticleSystem.transform.position = new Vector3(StonePos.x + 1, StonePos.y, StonePos.z);
         }
     }
 

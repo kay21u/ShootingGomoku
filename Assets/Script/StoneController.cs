@@ -12,6 +12,14 @@ public class StoneController : MonoBehaviour
         rb = GetComponent<Rigidbody>();
     }
 
+    void Update()
+    {
+        if (this.gameObject.transform.position.y < -10)
+        {
+            Destroy(this.gameObject);
+        }
+    }
+
     void FixedUpdate()
     {
         rb.AddForce(0, -10f, 0);
